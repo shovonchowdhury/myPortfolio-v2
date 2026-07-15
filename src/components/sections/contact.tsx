@@ -116,7 +116,8 @@ export function Contact() {
         >
           <div className="h-[2px] bg-gradient-to-r from-primary via-violet-500 to-indigo-500" />
 
-          <form onSubmit={handleSubmit} className="px-6 py-6 sm:px-8 sm:py-8 space-y-5">
+          <div style={{ padding: "24px" }} className="sm:!p-8">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid gap-3 sm:gap-5 sm:grid-cols-2">
               <div>
                 <label
@@ -211,6 +212,7 @@ export function Contact() {
               )}
             </motion.button>
           </form>
+          </div>
         </motion.div>
       </div>
     </section>
