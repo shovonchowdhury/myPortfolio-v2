@@ -54,6 +54,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Buttons & links cursor */
+button,
+a,
+[role="button"] {
+  cursor: pointer;
+}
+
 /* Selection color */
 ::selection {
   background-color: var(--primary);
