@@ -54,6 +54,16 @@ html {
   scroll-behavior: smooth;
 }
 
+section[id] {
+  scroll-margin-top: 56px;
+}
+
+@media (min-width: 640px) {
+  section[id] {
+    scroll-margin-top: 64px;
+  }
+}
+
 /* Buttons & links cursor */
 button,
 a,

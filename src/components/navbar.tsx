@@ -123,7 +123,16 @@ export function Navbar() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setMobileOpen(false);
+                      const target = document.querySelector(link.href);
+                      if (target) {
+                        setTimeout(() => {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }, 300);
+                      }
+                    }}
                     className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
                   >
                     {link.name}
