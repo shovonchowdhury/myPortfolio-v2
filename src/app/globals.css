@@ -17,11 +17,11 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #f8fafc;
   --foreground: #0f172a;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  --border: #e2e8f0;
+  --border: #cbd5e1;
   --primary: #6366f1;
   --primary-foreground: #ffffff;
   --card: #ffffff;
@@ -52,17 +52,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Scroll progress bar */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: var(--primary);
-  z-index: 100;
-  transition: width 0.1s linear;
 }
 
 /* Selection color */

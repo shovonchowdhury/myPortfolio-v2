@@ -87,18 +87,18 @@ export function About() {
             viewport={{ once: true }}
           >
             {/* Terminal-style bio card */}
-            <div className="group relative rounded-2xl border border-border/60 bg-slate-900 dark:bg-card/50 backdrop-blur-sm overflow-hidden">
+            <div className="group relative rounded-2xl border border-border/60 bg-slate-900 backdrop-blur-sm overflow-hidden">
               {/* Animated gradient border on hover */}
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-r from-primary/20 via-violet-500/20 to-primary/20 blur-sm -z-10" />
 
               {/* Terminal header */}
-              <div className="flex items-center gap-2 border-b border-white/10 dark:border-border/60 px-5 py-3">
+              <div className="flex items-center gap-2 border-b border-white/10 px-5 py-3">
                 <div className="flex gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-500/70" />
                   <div className="h-3 w-3 rounded-full bg-yellow-500/70" />
                   <div className="h-3 w-3 rounded-full bg-green-500/70" />
                 </div>
-                <span className="ml-2 text-xs text-slate-400 dark:text-muted-foreground font-mono">about-me.ts</span>
+                <span className="ml-2 text-xs text-slate-400 font-mono">about-me.ts</span>
               </div>
 
               {/* Content */}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sun, Moon, Menu, X } from "lucide-react";
@@ -9,11 +9,10 @@ import { navLinks } from "@/lib/data";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    setMounted(true);
     function handleScroll() {
       setScrolled(window.scrollY > 50);
     }
@@ -34,14 +33,41 @@ export function Navbar() {
           href="#"
           className="group flex items-center gap-2 transition-transform hover:scale-105"
         >
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-violet-500 shadow-md shadow-primary/20">
-            {/* Angle brackets */}
-            <span className="text-[10px] font-bold text-white/50 absolute left-1 top-1/2 -translate-y-1/2">&lt;</span>
-            <span className="text-[10px] font-bold text-white/50 absolute right-1 top-1/2 -translate-y-1/2">/&gt;</span>
-            {/* Letter */}
-            <span className="relative text-base font-black text-white tracking-tight" style={{ fontFamily: "var(--font-geist-mono), monospace" }}>S</span>
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-violet-500 to-fuchsia-500 shadow-lg shadow-primary/25">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="drop-shadow-sm"
+            >
+              <path
+                d="M8 4L4 8L8 12"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity="0.6"
+              />
+              <path
+                d="M16 12L20 16L16 20"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity="0.6"
+              />
+              <path
+                d="M14 4L10 20"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                opacity="0.9"
+              />
+            </svg>
           </div>
-          <span className="text-sm font-bold text-foreground hidden sm:block tracking-tight">
+          <span className="text-lg font-bold text-foreground hidden sm:block tracking-tight">
             shovon<span className="text-primary font-mono">.dev</span>
           </span>
         </a>

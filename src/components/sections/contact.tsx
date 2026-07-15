@@ -2,9 +2,10 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, MapPin, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { Send, Mail, MapPin, ArrowUpRight, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { socialLinks } from "@/lib/data";
+import { sendContactEmail } from "@/lib/actions";
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -13,10 +14,23 @@ export function Contact() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setSending(true);
+    setError("");
+
+    const result = await sendContactEmail(formData);
+
+    if (result.error) {
+      setError(result.error);
+      setSending(false);
+      return;
+    }
+
+    setSending(false);
     setSubmitted(true);
     setFormData({ name: "", email: "", message: "" });
     setTimeout(() => setSubmitted(false), 3000);
@@ -164,9 +178,16 @@ export function Contact() {
               />
             </div>
 
+            {error && (
+              <div className="flex items-center gap-2 rounded-lg border border-red-500/20 bg-red-500/10 px-4 py-2.5 text-sm text-red-500">
+                <AlertCircle size={14} />
+                {error}
+              </div>
+            )}
+
             <motion.button
               type="submit"
-              disabled={submitted}
+              disabled={submitted || sending}
               className="group relative inline-flex w-full items-center justify-center gap-2.5 overflow-hidden rounded-xl bg-gradient-to-r from-primary to-violet-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30 disabled:opacity-70"
               whileHover={{ scale: 1.01, y: -1 }}
               whileTap={{ scale: 0.98 }}
@@ -176,6 +197,11 @@ export function Contact() {
                 <>
                   <CheckCircle2 size={16} />
                   Message Sent!
+                </>
+              ) : sending ? (
+                <>
+                  <Loader2 size={16} className="animate-spin" />
+                  Sending...
                 </>
               ) : (
                 <>

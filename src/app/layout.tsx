@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ScrollProgress } from "@/components/scroll-progress";
 import { BubblesBg } from "@/components/bubbles-bg";
 import "./globals.css";
 
@@ -52,7 +51,6 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider>
           <BubblesBg />
-          <ScrollProgress />
           <Navbar />
           <main className="relative z-10">{children}</main>
           <Footer />
