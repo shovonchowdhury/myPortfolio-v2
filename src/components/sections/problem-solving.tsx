@@ -62,7 +62,7 @@ export function ProblemSolving() {
   const total = platforms.reduce((s, p) => s + parseCount(p.problemsSolved), 0);
 
   return (
-    <section id="problem-solving" className="relative px-6 py-24 overflow-hidden">
+    <section id="problem-solving" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -121,7 +121,7 @@ export function ProblemSolving() {
         </motion.div>
 
         {/* Platform cards */}
-        <div className="grid gap-5 sm:grid-cols-3">
+        <div className="grid gap-3 sm:gap-5 sm:grid-cols-3">
           {platforms.map((platform, i) => {
             const style = platformStyles[platform.name] ?? {
               icon: Code2,

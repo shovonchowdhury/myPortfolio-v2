@@ -231,7 +231,7 @@ const cardVariants = {
 
 export function Projects() {
   return (
-    <section id="projects" className="relative px-6 py-24 overflow-hidden">
+    <section id="projects" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -253,7 +253,7 @@ export function Projects() {
         />
 
         <motion.div
-          className="grid gap-8 lg:grid-cols-2"
+          className="grid gap-5 sm:gap-8 lg:grid-cols-2"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -300,7 +300,7 @@ export function Projects() {
                 </div>
 
                 {/* Content */}
-                <div className="relative p-6 space-y-4 flex flex-col flex-1">
+                <div className="relative p-4 sm:p-6 space-y-4 flex flex-col flex-1">
                   {/* Title row */}
                   <div className="flex items-center gap-3">
                     <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -328,7 +328,7 @@ export function Projects() {
                   </div>
 
                   {/* Key features */}
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">
                     {project.features.slice(0, 4).map((feature) => (
                       <p
                         key={feature}
@@ -343,7 +343,7 @@ export function Projects() {
                   {/* Divider + Links pinned to bottom */}
                   <div className="!mt-auto pt-4">
                   <div className="h-px bg-border/50 mb-4" />
-                  <div className="flex items-center gap-4">
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-4">
                     {project.liveUrl && (
                       <motion.a
                         href={project.liveUrl}

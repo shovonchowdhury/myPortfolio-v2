@@ -54,7 +54,7 @@ export function Experience() {
     <section
       ref={sectionRef}
       id="experience"
-      className="relative px-6 py-24 overflow-hidden"
+      className="relative px-6 py-14 sm:py-24 overflow-hidden"
     >
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">

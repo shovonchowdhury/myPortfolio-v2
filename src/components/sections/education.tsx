@@ -7,7 +7,7 @@ import { education } from "@/lib/data";
 
 export function Education() {
   return (
-    <section id="education" className="relative px-6 py-24 overflow-hidden">
+    <section id="education" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -79,7 +79,7 @@ export function Education() {
                         </p>
                       </div>
 
-                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+                      <div className="flex flex-wrap items-center gap-x-3 sm:gap-x-5 gap-y-2 text-sm">
                         <span className="inline-flex items-center gap-1.5 text-muted-foreground">
                           <Calendar size={14} />
                           {edu.period}

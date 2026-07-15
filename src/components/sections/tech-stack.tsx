@@ -50,7 +50,7 @@ const chipVariants = {
 
 export function TechStack() {
   return (
-    <section id="tech-stack" className="relative px-6 py-24 overflow-hidden">
+    <section id="tech-stack" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -72,7 +72,7 @@ export function TechStack() {
         />
 
         <motion.div
-          className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-3 sm:gap-5 sm:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

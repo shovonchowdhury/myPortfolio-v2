@@ -37,7 +37,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative px-6 py-24 overflow-hidden">
+    <section id="contact" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -60,7 +60,7 @@ export function Contact() {
 
         {/* Info row */}
         <motion.div
-          className="mb-10 flex flex-wrap items-center justify-center gap-4"
+          className="mb-6 sm:mb-10 flex flex-wrap items-center justify-center gap-2 sm:gap-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -70,15 +70,15 @@ export function Contact() {
             <MapPin size={14} className="text-primary" />
             Sylhet, Bangladesh
           </span>
-          <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/50 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground">
-            <Mail size={14} className="text-primary" />
-            shovondaschowdhury1560@gmail.com
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-card/50 backdrop-blur-sm px-4 py-2 text-sm text-muted-foreground max-w-full overflow-hidden">
+            <Mail size={14} className="text-primary shrink-0" />
+            <span className="truncate">shovondaschowdhury1560@gmail.com</span>
           </span>
         </motion.div>
 
         {/* Social links */}
         <motion.div
-          className="mb-10 flex items-center justify-center gap-3"
+          className="mb-6 sm:mb-10 flex items-center justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -117,7 +117,7 @@ export function Contact() {
           <div className="h-[2px] bg-gradient-to-r from-primary via-violet-500 to-indigo-500" />
 
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-3 sm:gap-5 sm:grid-cols-2">
               <div>
                 <label
                   htmlFor="name"

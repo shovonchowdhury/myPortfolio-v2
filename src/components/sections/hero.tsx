@@ -116,15 +116,15 @@ export function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative flex min-h-screen items-center justify-center px-6"
+      className="relative flex min-h-screen items-center justify-center px-6 pt-20"
     >
       <FloatingOrbs />
       <FloatingParticles />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-12 lg:flex-row lg:gap-16">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-8 lg:flex-row lg:gap-16">
         {/* Left — Text content */}
         <motion.div
-          className="flex-1 text-center lg:text-left"
+          className="order-2 lg:order-1 flex-1 text-center lg:text-left"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -186,11 +186,11 @@ export function Hero() {
           {/* CTA Buttons */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
+            className="mt-6 sm:mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start"
           >
             <motion.a
               href="#projects"
-              className="group relative box-border inline-flex h-12 min-w-[200px] items-center justify-center gap-2 overflow-hidden rounded-xl border border-transparent bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-md"
+              className="group relative box-border inline-flex h-12 w-full sm:w-auto sm:min-w-[200px] items-center justify-center gap-2 overflow-hidden rounded-xl border border-transparent bg-primary px-7 text-sm font-semibold text-primary-foreground shadow-md"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -203,7 +203,7 @@ export function Hero() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group box-border inline-flex h-12 min-w-[200px] items-center justify-center gap-2 rounded-xl border border-border bg-background/50 px-7 text-sm font-semibold text-foreground backdrop-blur-sm transition-colors hover:border-primary/50 hover:bg-accent"
+              className="group box-border inline-flex h-12 w-full sm:w-auto sm:min-w-[200px] items-center justify-center gap-2 rounded-xl border border-border bg-background/50 px-7 text-sm font-semibold text-foreground backdrop-blur-sm transition-colors hover:border-primary/50 hover:bg-accent"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -216,7 +216,7 @@ export function Hero() {
           {/* Social Links */}
           <motion.div
             variants={itemVariants}
-            className="mt-10 flex items-center justify-center gap-3 lg:justify-start"
+            className="mt-6 sm:mt-10 flex items-center justify-center gap-3 lg:justify-start"
           >
             {socialLinks.map((link) => (
               <motion.a
@@ -238,7 +238,7 @@ export function Hero() {
 
         {/* Right — Profile image */}
         <motion.div
-          className="relative flex-shrink-0"
+          className="order-1 lg:order-2 relative flex-shrink-0"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -303,7 +303,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2 }}

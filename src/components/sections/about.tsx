@@ -59,7 +59,7 @@ const itemVariants = {
 
 export function About() {
   return (
-    <section id="about" className="relative px-6 py-24 overflow-hidden">
+    <section id="about" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background decoration */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -77,7 +77,7 @@ export function About() {
       <div className="relative mx-auto max-w-6xl">
         <SectionHeading title="About Me" />
 
-        <div className="grid gap-12 lg:grid-cols-5">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-5">
           {/* Text — takes 3 cols */}
           <motion.div
             className="lg:col-span-3 space-y-6"

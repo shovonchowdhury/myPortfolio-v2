@@ -24,7 +24,7 @@ const cardVariants = {
 
 export function Research() {
   return (
-    <section id="publications" className="relative px-6 py-24 overflow-hidden">
+    <section id="publications" className="relative px-6 py-14 sm:py-24 overflow-hidden">
       {/* Background */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -47,7 +47,7 @@ export function Research() {
 
         {/* IEEE badge */}
         <motion.div
-          className="mx-auto mb-10 flex items-center justify-center gap-2"
+          className="mx-auto mb-6 sm:mb-10 flex items-center justify-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
